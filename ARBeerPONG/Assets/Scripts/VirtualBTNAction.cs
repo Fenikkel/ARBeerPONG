@@ -6,8 +6,8 @@ using Vuforia;
 public class VirtualBTNAction : MonoBehaviour, IVirtualButtonEventHandler
 {
 
-    public GameObject vbBtnObj;
-    public GameObject ballon;
+    private GameObject vbBtnObj;
+    private GameObject ballon;
 
     // Use this for initialization
     void Start () {
@@ -20,11 +20,15 @@ public class VirtualBTNAction : MonoBehaviour, IVirtualButtonEventHandler
     }
     public void OnButtonPressed(VirtualButtonBehaviour vb) {
         //cubeAni.Play("cube_animation");
-        Destroy(ballon);
-        Debug.Log("Button pressed");
+        //Destroy(ballon);
+        //Debug.Log("Button pressed");
+
+        ballon.SetActive(false);
     }
     public void OnButtonReleased(VirtualButtonBehaviour vb) {
         //cubeAni.Play("none");
-        Debug.Log("Button released");
+        //Debug.Log("Button released");
+        ballon.SetActive(false);
+
     }
 }
